@@ -9,7 +9,7 @@ const Navbar = ({ children }) => {
             <div class="drawer drawer-end" data-theme={dark ? "dark" : "light"}>
                 <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
                 <div class="drawer-content flex flex-col">
-                    <div class=" lg:px-16 w-full navbar bg-base-300">
+                    <div class=" lg:px-16 w-full navbar bg-base-100">
                         <div class="flex-1 px-2 mx-2 text-xl font-bold">Thu Shine..</div>
                         <div class="flex-none lg:hidden">
                             <label for="my-drawer-3" class="btn btn-square btn-ghost">
