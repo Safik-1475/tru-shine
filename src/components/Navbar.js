@@ -31,6 +31,19 @@ const Navbar = ({ children }) => {
                                 <li>
                                     <NavLink className='rounded-lg ml-1' to={'/login'}>Login</NavLink>
                                 </li>
+                                {/* Dropdown here */}
+
+                                <div class="dropdown dropdown-end ml-1">
+                                    <label tabindex="0" class="btn btn-outline btn-primary rounded-btn">BOOK NOW</label>
+                                    <ul tabindex="0" class="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4">
+                                        <li>
+                                            <NavLink className='rounded-lg mb-1' to={'/your order'}>Your Order</NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink className='rounded-lg' to={'preview items'}>Preview items</NavLink>
+                                        </li>
+                                    </ul>
+                                </div>
                             </ul>
                         </div>
                     </div>
@@ -54,6 +67,19 @@ const Navbar = ({ children }) => {
                         <li>
                             <NavLink className='rounded-lg ml-1' to={'/login'}>Login</NavLink>
                         </li>
+                        <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
+                            <div class="collapse-title text-sm font-normal">
+                                BOOK NOW
+                            </div>
+                            <div class="collapse-content">
+                                <li>
+                                    <NavLink className='rounded-lg mb-1' to={'/#'}>Your Order</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink className='rounded-lg' to={'/#'}>Preview items</NavLink>
+                                </li>
+                            </div>
+                        </div>
                     </ul>
 
                 </div>
