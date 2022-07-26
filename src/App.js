@@ -1,12 +1,13 @@
 import Navbar from "./components/Navbar";
-import Home from "./pages/Home/Home";
-import { Routes, Route } from 'react-router-dom';
-import About from './pages/About';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from "react";
-import Login from "./pages/Login";
-import RequireAuth from "./authentication/RequireAuth";
+import { PublicRoutes } from "./routes/PublicRoutes";
+import { Route, Routes } from "react-router-dom";
+import { PrivateRoute } from "./routes/PrivateRoutes";
+import About from "./pages/About";
+import Services from "./pages/Services";
+import RequireAuth from './authentication/RequireAuth';
 
 function App() {
   useEffect(() => {
@@ -16,12 +17,14 @@ function App() {
     <>
       <Navbar>
         <Routes>
-          <Route path="/" element={<Home />} />
-          {/* <Route path='/about' element={<About />} /> */}
-          <Route path="/login" element={<Login />} />
-          <Route element={<RequireAuth>
-            <Route path="/about" element={<About />} />
-          </RequireAuth>} />
+          {
+            PublicRoutes.map(({ path, Component }) => <Route path={path} element={<Component />} />)
+          }
+          {
+            PrivateRoute.map(route => <Route element={<RequireAuth>
+              <Route path={route.path} element={route.Component} />
+            </RequireAuth>} />)
+          }
         </Routes>
       </Navbar>
     </>

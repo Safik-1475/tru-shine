@@ -2,10 +2,10 @@ import React from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 
 const RequireAuth = ({ children }) => {
-    const user = false;
     const location = useLocation();
+    const user = false;
     if (!user) {
-        <Navigate path='/login' state={{ from: location }} replace />
+        return <Navigate path='/login' state={{ from: location }} replace />
     }
     return children
 };
