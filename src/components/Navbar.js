@@ -9,7 +9,7 @@ const Navbar = ({ children }) => {
             <div class="drawer drawer-end" data-theme={dark ? "dark" : "light"}>
                 <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
                 <div class="drawer-content flex flex-col">
-                    <div class=" lg:px-16 w-full navbar bg-base-100">
+                    <div class=" lg:px-16 w-full navbar bg-base-100 fixed top">
                         <div class="flex-1 px-2 mx-2 text-xl font-bold">Thu Shine..</div>
                         <div class="flex-none lg:hidden">
                             <label for="my-drawer-3" class="btn btn-square btn-ghost">
@@ -75,7 +75,7 @@ const Navbar = ({ children }) => {
                         <li>
                             <NavLink className='rounded-lg ml-1' to={'/login'}>Login</NavLink>
                         </li>
-                        <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
+                        <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box mt-1">
                             <div class="collapse-title text-sm font-normal">
                                 BOOK NOW
                             </div>

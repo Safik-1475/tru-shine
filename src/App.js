@@ -5,6 +5,7 @@ import About from './pages/About';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from "react";
+import Login from "./pages/Login";
 
 function App() {
   useEffect(() => {
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </Navbar>
     </>
