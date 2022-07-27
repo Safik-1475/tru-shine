@@ -4,27 +4,25 @@ import 'aos/dist/aos.css';
 import { useEffect } from "react";
 import { PublicRoutes } from "./routes/PublicRoutes";
 import { Route, Routes } from "react-router-dom";
-import { PrivateRoute } from "./routes/PrivateRoutes";
-import About from "./pages/About";
-import Services from "./pages/Services";
 import RequireAuth from './authentication/RequireAuth';
+import { PrivateRoute } from './routes/PrivateRoutes';
 
 function App() {
   useEffect(() => {
-    AOS.init();
+    AOS.init()
   }, [])
   return (
     <>
       <Navbar>
         <Routes>
           {
-            PublicRoutes.map(({ path, Component }) => <Route path={path} element={<Component />} />)
+            PublicRoutes.map(({ path, Component }, index) => (<Route key={index} path={path} element={<Component />} />))
           }
-          {
-            PrivateRoute.map(route => <Route element={<RequireAuth>
-              <Route path={route.path} element={route.Component} />
-            </RequireAuth>} />)
-          }
+          <Route element={<RequireAuth />}>
+            {
+              PrivateRoute.map(({ path, Component }, index) => (<Route key={index} path={path} element={Component} />))
+            }
+          </Route>
         </Routes>
       </Navbar>
     </>
