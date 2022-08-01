@@ -1,9 +1,12 @@
 import React from 'react';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import useAdmin from '../hooks/useAdmin';
+
 
 const Navbar = ({ children }) => {
     const [dark, setDark] = useState(false);
+    const [admin] = useAdmin();
     return (
         <>
             <div class="drawer drawer-end" data-theme={dark ? "dark" : "light"}>
@@ -21,6 +24,9 @@ const Navbar = ({ children }) => {
                                 <li>
                                     <NavLink className='rounded-lg ml-1' to={'/'}>Home</NavLink>
                                 </li>
+                                {admin && (<li>
+                                    <NavLink className='rounded-lg ml-1' to={'/dashboard'}>Dashboard</NavLink>
+                                </li>)}
                                 <li>
                                     <NavLink className='rounded-lg ml-1' to={'/about'}>About</NavLink>
                                 </li>
