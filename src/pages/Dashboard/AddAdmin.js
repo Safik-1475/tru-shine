@@ -4,6 +4,15 @@ const AddAdmin = () => {
     return (
         <div>
             <h1>Hello Add Admin</h1>
+            <h1>Hello Add Admin</h1>
+            <h1>Hello Add Admin</h1>
+            <h1>Hello Add Admin</h1>
+            <h1>Hello Add Admin</h1>
+            <h1>Hello Add Admin</h1>
+            <h1>Hello Add Admin</h1>
+            <h1>Hello Add Admin</h1>
+            <h1>Hello Add Admin</h1>
+            <h1>Hello Add Admin</h1>
         </div>
     );
 };

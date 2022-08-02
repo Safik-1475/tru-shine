@@ -8,7 +8,7 @@ const Navbar = ({ children }) => {
     const [dark, setDark] = useState(false);
     const [admin] = useAdmin();
     const { pathname } = useLocation();
-    console.log(pathname)
+    // console.log(pathname)
     return (
         <>
             <div class="drawer drawer-end" data-theme={dark ? "dark" : "light"}>
@@ -34,7 +34,7 @@ const Navbar = ({ children }) => {
                                     <NavLink className='rounded-lg ml-1' to={'/'}>Home</NavLink>
                                 </li>
                                 {admin && (<li>
-                                    <NavLink className='rounded-lg ml-1' to={'/dashboard'}>Dashboard</NavLink>
+                                    <NavLink className='rounded-lg ml-1' to={'/dashboard/add-admin'}>Dashboard</NavLink>
                                 </li>)}
                                 <li>
                                     <NavLink className='rounded-lg ml-1' to={'/about'}>About</NavLink>

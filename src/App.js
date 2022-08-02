@@ -8,6 +8,8 @@ import RequireAuth from './authentication/RequireAuth';
 import { PrivateRoute } from './routes/PrivateRoutes';
 import AdminRoute from "./authentication/AdminRoute";
 import Dashboard from "./pages/Dashboard/Dashboard";
+import AddAdmin from './pages/Dashboard/AddAdmin';
+import AddService from './pages/Dashboard/AddService';
 
 function App() {
   useEffect(() => {
@@ -17,16 +19,22 @@ function App() {
     <>
       <Navbar>
         <Routes>
+          {/* Public Route */}
           {
             PublicRoutes.map(({ path, Component }, index) => (<Route key={index} path={path} element={<Component />} />))
           }
+          {/* Private Route */}
           <Route element={<RequireAuth />}>
             {
               PrivateRoute.map(({ path, Component }, index) => (<Route key={index} path={path} element={Component} />))
             }
           </Route>
+          {/* Nested Route here */}
           <Route element={<AdminRoute />}>
-            <Route path="/dashboard" element={<Dashboard />} />;
+            <Route path="/dashboard" element={<Dashboard />}>
+              <Route path="add-admin" element={<AddAdmin />} />
+              <Route path="add-service" element={<AddService />} />
+            </Route>;
           </Route>
         </Routes>
       </Navbar>
